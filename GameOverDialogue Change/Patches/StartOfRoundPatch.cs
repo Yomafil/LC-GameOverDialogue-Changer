@@ -11,10 +11,10 @@ namespace GameOverDialogue_Change.Patches
     [HarmonyPatch(typeof(StartOfRound))]
     internal class StartOfRoundPatch
     {
-        static int scrapMode = Plugin.CfgScrapMode;
+        static int scrapMode = Plugin.CFg.scrapMode;
 
-        [HarmonyPatch("Awake")]
-        [HarmonyPostfix]
+        [HarmonyPatch("gameOverAnimation")]
+        [HarmonyPrefix]
         static void GameOverDialogueChange(ref DialogueSegment[] ___gameOverDialogue)
         {
             if (scrapMode == 0)

@@ -24,8 +24,6 @@ namespace GameOverDialogue_Change
 
         internal static PluginConfig CFg { get; private set; } = null!;
 
-        static public int CfgScrapMode;
-
         public static ManualLogSource Log => Instance.Logger;
 
         void Awake()
@@ -36,8 +34,6 @@ namespace GameOverDialogue_Change
             }
 
             CFg = new(this);
-
-            CfgScrapMode = CFg.scrapMode;
 
             Log.LogInfo("GameOverDialogue Changer as been loaded!");
 
